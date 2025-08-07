@@ -17,14 +17,10 @@ export const metadata: Metadata = {
   title: "ECS",
 };
 
-export default function RootLayout({children}: Readonly<PropsWithChildren>) {
+export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
 }
