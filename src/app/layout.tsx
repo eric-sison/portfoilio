@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import type { PropsWithChildren } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-import { PropsWithChildren } from "react";
 import { DotBackground } from "@/components/DotBackground";
-import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,9 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <DotBackground>{children}</DotBackground>
+          <DotBackground>
+            <div className="h-screen w-screen">{children}</div>
+          </DotBackground>
         </ThemeProvider>
       </body>
     </html>

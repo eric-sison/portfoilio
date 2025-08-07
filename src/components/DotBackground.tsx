@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import React, { FunctionComponent, type PropsWithChildren } from "react";
 
@@ -14,7 +16,7 @@ export const DotBackground: FunctionComponent<PropsWithChildren> = ({ children }
       />
 
       <div className="bg-background pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-      <div className="z-10 w-full">{children}</div>
+      <div className="z-10 h-full w-full">{children}</div>
     </div>
   );
 };
